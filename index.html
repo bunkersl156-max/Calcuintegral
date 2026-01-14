@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcumaster</title>
+
+    <!-- Nerdamer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/1.1.13/nerdamer.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/1.1.13/Algebra.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/1.1.13/Calculus.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Calcumaster</h1>
+    <p>Calculadora Matemática · Simple e Integral</p>
+</header>
+
+<nav>
+    <button onclick="showSection('simple')">🔢 Cálculo Simple</button>
+    <button onclick="showSection('integral')">∫ Cálculo Integral</button>
+</nav>
+
+<main>
+
+    <!-- CALCULADORA SIMPLE -->
+    <section id="simple" class="section active">
+        <h2>Calculadora Simple</h2>
+
+        <input type="text" id="simpleInput" placeholder="Ej: 3*(5+2)">
+        <button onclick="calculateSimple()">Calcular</button>
+
+        <div class="result" id="simpleResult">Resultado...</div>
+    </section>
+
+    <!-- CALCULADORA INTEGRAL -->
+    <section id="integral" class="section">
+        <h2>Calculadora Integral</h2>
+
+        <input type="text" id="function" placeholder="Función f(x)  Ej: x^2 + sin(x)">
+
+        <select id="integralType" onchange="toggleLimits()">
+            <option value="indefinite">Integral indefinida</option>
+            <option value="definite">Integral definida</option>
+        </select>
+
+        <div id="limits" style="display:none;">
+            <input type="number" id="a" placeholder="Límite inferior a">
+            <input type="number" id="b" placeholder="Límite superior b">
+        </div>
+
+        <button onclick="calculateIntegral()">Calcular Integral</button>
+
+        <div class="result" id="integralResult">Resultado...</div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 · Calcumaster
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
