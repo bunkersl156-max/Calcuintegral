@@ -28,7 +28,7 @@ function calculateIntegral() {
 
     try {
         if (type === "indefinite") {
-            result.textContent = nerdamer.integrate(func, 'x').toString() + " + C";
+            result.textContent = nerdamer(`integrate(${func}, x)`).toString() + " + C";
         } else {
             const a = document.getElementById("a").value;
             const b = document.getElementById("b").value;
