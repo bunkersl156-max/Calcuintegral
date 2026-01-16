@@ -30,12 +30,12 @@ function calculateIntegral() {
         if (type === "indefinite") {
             result.textContent = nerdamer(`integrate(${func}, x)`).toString() + " + C";
         } else {
-            const a = document.getElementById("a").value;
-            const b = document.getElementById("b").value;
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
 
             if (a === "" || b === "") throw "Faltan límites";
 
-            result.textContent = nerdamer.integrate(func, 'x', a, b).evaluate().toString();
+            result.textContent = nerdamer(`integrate(${func}, x, ${a}, ${b})`).toString();
         }
     } catch {
         result.textContent = "Error en la función o los datos";
