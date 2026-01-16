@@ -35,7 +35,7 @@ function calculateIntegral() {
 
             if (a === "" || b === "") throw "Faltan límites";
 
-            result.textContent = nerdamer(`defint(${func}, ${a}, ${b}, x)`).toString();
+            result.textContent = parseFloat(nerdamer(`defint(${func}, ${a}, ${b}, x)`)).toString();
         }
     } catch {
         result.textContent = "Error en la función o los datos";
